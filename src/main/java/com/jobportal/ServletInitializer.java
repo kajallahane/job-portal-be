@@ -1,4 +1,4 @@
-package com.jobportal.jobportal;
+package com.jobportal;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
