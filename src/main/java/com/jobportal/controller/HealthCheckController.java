@@ -1,5 +1,7 @@
 package com.jobportal.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HealthCheckController {
 
     @GetMapping("/healthcheck")
-    public String healthcheck() {
-        return "App is working fine";
+    public ResponseEntity<String> healthcheck() {
+        return new ResponseEntity<>("App is working fine",HttpStatus.OK);
     }
 }

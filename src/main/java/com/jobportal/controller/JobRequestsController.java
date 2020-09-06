@@ -5,7 +5,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
 
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,10 +21,11 @@ import com.jobportal.domain.JobRequest;
 @CrossOrigin
 public class JobRequestsController {
 	@GetMapping("/jobrequests")
-    public List<JobRequest> listjobrequests() {
+    public ResponseEntity<List<JobRequest>> listjobrequests() {
     	List<JobRequest> jobRequests = null;
     	try {
     		ObjectMapper mapper = new ObjectMapper();
+    		
 			TypeReference<List<JobRequest>> typereference = new TypeReference<List<JobRequest>>() {};
 			InputStream inputStream = TypeReference.class.getResourceAsStream("/json/jobrequests.json");
 			jobRequests = mapper.readValue(inputStream, typereference);
@@ -32,10 +34,11 @@ public class JobRequestsController {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR) ;
+			
 		}
-    	return jobRequests;
+    	return new ResponseEntity<>(jobRequests,HttpStatus.OK) ;
     	
-        // return "App is working fine";
     }
 	
 	@PostMapping("/jobrequests")
@@ -49,7 +52,7 @@ public class JobRequestsController {
 			jobRequests.add(newjob);
 			inputStream.close();
 			ClassLoader classLoader = getClass().getClassLoader();
-	        URL resource = classLoader.getResource("json/jobrequests.json");
+	        URL resource = classLoader.getResource("/json/jobrequests.json");
 			mapper.writeValue(new File(resource.getFile()), jobRequests);
 
 			
