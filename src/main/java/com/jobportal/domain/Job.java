@@ -1,12 +1,18 @@
-package com.jobportal.model;
+package com.jobportal.domain;
 
 public class Job {
 	String jobId;
 	String title;
-	String experience;	
+	String expectedExperience;	
 	String description;
 	String company;
 	String location;
+	public String getExpectedExperience() {
+		return expectedExperience;
+	}
+	public void setExpectedExperience(String expectedExperience) {
+		this.expectedExperience = expectedExperience;
+	}
 	public String getJobId() {
 		return jobId;
 	}
@@ -18,12 +24,6 @@ public class Job {
 	}
 	public void setTitle(String title) {
 		this.title = title;
-	}
-	public String getExperience() {
-		return experience;
-	}
-	public void setExperience(String experience) {
-		this.experience = experience;
 	}
 	public String getDescription() {
 		return description;

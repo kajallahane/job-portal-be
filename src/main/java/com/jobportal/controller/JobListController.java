@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jobportal.model.Job;
+import com.jobportal.domain.Job;
 
 @RestController
 @CrossOrigin

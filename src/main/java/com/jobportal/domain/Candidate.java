@@ -1,4 +1,4 @@
-package com.jobportal.model;
+package com.jobportal.domain;
 
 public class Candidate {
 	String name;
