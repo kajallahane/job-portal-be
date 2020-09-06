@@ -1,5 +1,6 @@
 [{
 	"jobId":"job123",
+	"companyId":"567",
 	"title": "Fullstack devloper",
 	"expectedExperience": "3-5 Years",	
 	"description": "Just another fullstack job",
@@ -8,6 +9,7 @@
 },
 {
 	"jobId":"job234",
+	"companyId":"567",
 	"title": "Backend devloper",
 	"expectedExperience": "5 Years",	
 	"description": "Just another backend job",

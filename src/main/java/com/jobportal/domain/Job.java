@@ -7,6 +7,13 @@ public class Job {
 	String description;
 	String company;
 	String location;
+	String companyId;
+	public String getCompanyId() {
+		return companyId;
+	}
+	public void setCompanyId(String companyId) {
+		this.companyId = companyId;
+	}
 	public String getExpectedExperience() {
 		return expectedExperience;
 	}

@@ -1,0 +1,22 @@
+[{
+    "jobRequestId": "req543275",
+    "jobRequestStatus": "Applied",
+    "jobDetails": {
+        "jobId": "job123",
+        "title": "Fullstack devloper",
+        "expectedExperience": "3-5 Years",
+        "description": "Just another fullstack job",
+        "company": "Telstra",
+        "location": "Pune",
+        "companyId": "567"
+    },
+    "candidateDetails": {
+        "name": "Abhishek",
+        "emailId": "abhishek@gmail.com",
+        "candidateId": "1234",
+        "experience": "5 Years",
+        "contact": 123456788,
+        "noticePeriod": "3 Months",
+        "salary": "5 LPA"
+    }
+}]
