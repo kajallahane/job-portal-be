@@ -1,7 +1,5 @@
 package com.jobportal.controller;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.List;
 
@@ -19,18 +17,18 @@ public class JobListController {
 
     @GetMapping("/joblist")
     public List<Job> joblist() {
-    	List<Job> job = null;
+    	List<Job> jobs = null;
     	try {
     		ObjectMapper mapper = new ObjectMapper();
-			InputStream inputStream = new FileInputStream(new File("/Users/ab30197t/myWork/job-portal-be/jobportal/src/main/database/joblist.json"));
 			TypeReference<List<Job>> typereference = new TypeReference<List<Job>>() {};
-			job = mapper.readValue(inputStream, typereference);
+			InputStream inputStream = TypeReference.class.getResourceAsStream("/json/joblist.json");
+			jobs = mapper.readValue(inputStream, typereference);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	return job;
+    	return jobs;
     	
         // return "App is working fine";
     }
