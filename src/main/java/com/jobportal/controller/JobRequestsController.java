@@ -50,7 +50,7 @@ public class JobRequestsController {
 			inputStream.close();
 			ClassLoader classLoader = getClass().getClassLoader();
 	        URL resource = classLoader.getResource("json/jobrequests.json");
-			mapper.writeValue(new File(resource.toURI()), jobRequests);
+			mapper.writeValue(new File(resource.getFile()), jobRequests);
 
 			
 		} catch (Exception e) {
