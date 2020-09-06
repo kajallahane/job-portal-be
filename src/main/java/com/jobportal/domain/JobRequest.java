@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class JobRequest {
 	
 	String jobRequestId;
-	String jobRequestStatus;
+	String[] jobRequestStatus;
 	Job jobDetails;
 	Candidate candidateDetails;
 	public String getJobRequestId() {
@@ -15,10 +15,10 @@ public class JobRequest {
 	public void setJobRequestId(String jobRequestId) {
 		this.jobRequestId = jobRequestId;
 	}
-	public String getJobRequestStatus() {
+	public String[] getJobRequestStatus() {
 		return jobRequestStatus;
 	}
-	public void setJobRequestStatus(String jobRequestStatus) {
+	public void setJobRequestStatus(String[] jobRequestStatus) {
 		this.jobRequestStatus = jobRequestStatus;
 	}
 	public Job getJobDetails() {

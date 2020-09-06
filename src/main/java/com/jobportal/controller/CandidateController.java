@@ -56,7 +56,7 @@ public class CandidateController {
 	    	
 	    }
 	  
-	  @PostMapping("/candidate/jobrequests")
+	  @PostMapping("/candidate/insertjobrequest")
 	    public ResponseEntity<String> intsertjobrequest(@RequestBody JobRequest newjob) {
 		  
 		  	Candidate candidate = newjob.getCandidateDetails();

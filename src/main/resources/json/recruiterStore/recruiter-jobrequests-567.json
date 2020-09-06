@@ -1,6 +1,6 @@
 [{
     "jobRequestId": "req543275",
-    "jobRequestStatus": "Applied",
+    "jobRequestStatus": ["Applied"],
     "jobDetails": {
         "jobId": "job123",
         "companyId":"567",
