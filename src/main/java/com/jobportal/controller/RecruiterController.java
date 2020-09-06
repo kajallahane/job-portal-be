@@ -23,7 +23,7 @@ public class RecruiterController {
 	  public ResponseEntity<List<JobRequest>> candidateJobRequest(@PathVariable("recruiterId") String recruiterId) {
 		  
 		  	List<JobRequest> jobRequests = recuiterService.getJobRequests(recruiterId);
-	    	return new ResponseEntity<>(jobRequests,HttpStatus.OK) ;
+	    	return new ResponseEntity<List<JobRequest>>(jobRequests,HttpStatus.OK) ;
 	    	
 	    }
 }

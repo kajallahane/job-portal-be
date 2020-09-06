@@ -36,7 +36,7 @@ public class CandidateController {
 	    public ResponseEntity<Candidate> candidateInfo(@PathVariable("candidateid") String candidateId) {
 		  	
 		  	Candidate candidate = candidateService.getCandidateInfo(candidateId);
-	    	return new ResponseEntity<>(candidate,HttpStatus.OK);
+	    	return new ResponseEntity<Candidate>(candidate,HttpStatus.OK);
 	    	
 	    }
 	  
@@ -44,7 +44,7 @@ public class CandidateController {
 	    public ResponseEntity<List<Job>> candidateJobList() {
 		  	
 		  	List<Job> jobs = candidateService.getJobList();
-	    	return new ResponseEntity<>(jobs,HttpStatus.OK);
+	    	return new ResponseEntity<List<Job>>(jobs,HttpStatus.OK);
 	    	
 	    }
 	  
@@ -52,7 +52,7 @@ public class CandidateController {
 	  public ResponseEntity<List<JobRequest>> candidateJobRequest(@PathVariable("candidateid") String candidateId) {
 		  
 		  	List<JobRequest> jobRequests = candidateService.getJobRequests(candidateId);
-	    	return new ResponseEntity<>(jobRequests,HttpStatus.OK) ;
+	    	return new ResponseEntity<List<JobRequest>>(jobRequests,HttpStatus.OK) ;
 	    	
 	    }
 	  
@@ -65,7 +65,7 @@ public class CandidateController {
 		  	String companyId = job.getCompanyId();
 		  	candidateService.addJobRequest(candidateId, newjob);
 		  	recruiterService.addJobRequest(companyId, newjob);
-		  	return new ResponseEntity<>("Inserted",HttpStatus.OK) ;
+		  	return new ResponseEntity<String>("Inserted",HttpStatus.OK) ;
 	        // return "App is working fine";
 	    }
 	}
