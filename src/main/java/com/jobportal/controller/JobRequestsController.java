@@ -27,6 +27,7 @@ public class JobRequestsController {
 			TypeReference<List<JobRequest>> typereference = new TypeReference<List<JobRequest>>() {};
 			InputStream inputStream = TypeReference.class.getResourceAsStream("/json/jobrequests.json");
 			jobRequests = mapper.readValue(inputStream, typereference);
+			inputStream.close();
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -46,8 +47,10 @@ public class JobRequestsController {
 			InputStream inputStream = TypeReference.class.getResourceAsStream("/json/jobrequests.json");
 			jobRequests = mapper.readValue(inputStream, typereference);
 			jobRequests.add(newjob);
-			URL jobRequestLocation = TypeReference.class.getResource("/json/jobrequests.json");
-			mapper.writeValue(new File(jobRequestLocation.getFile()), jobRequests);
+			inputStream.close();
+			ClassLoader classLoader = getClass().getClassLoader();
+	        URL resource = classLoader.getResource("json/jobrequests.json");
+			mapper.writeValue(new File(resource.toURI()), jobRequests);
 
 			
 		} catch (Exception e) {
