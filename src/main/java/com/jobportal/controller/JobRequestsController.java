@@ -2,6 +2,7 @@ package com.jobportal.controller;
 
 import java.io.File;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 
 import org.springframework.core.io.ClassPathResource;
@@ -45,9 +46,8 @@ public class JobRequestsController {
 			InputStream inputStream = TypeReference.class.getResourceAsStream("/json/jobrequests.json");
 			jobRequests = mapper.readValue(inputStream, typereference);
 			jobRequests.add(newjob);
-			// mapper.updateValue(TypeReference.class.getResourceAsStream("/json/jobrequests.json"), jobRequests);
-			File file = new ClassPathResource("json/jobrequests.json").getFile();
-			mapper.writeValue(file, jobRequests);
+			URL jobRequestLocation = TypeReference.class.getResource("/json/jobrequests.json");
+			mapper.writeValue(new File(jobRequestLocation.getFile()), jobRequests);
 
 			
 		} catch (Exception e) {
