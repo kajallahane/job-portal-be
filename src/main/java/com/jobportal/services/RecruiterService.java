@@ -39,6 +39,7 @@ public class RecruiterService {
 			
 			TypeReference<List<JobRequest>> typereference = new TypeReference<List<JobRequest>>() {};
 			String path = "/json/recruiterStore/recruiterjobrequests"+recruiterId+".json";
+			System.out.print("Path to get " + path);
 			InputStream inputStream = TypeReference.class.getResourceAsStream(path);
 			jobRequests = mapper.readValue(inputStream, typereference);
 			jobRequests.add(jobRequest);
@@ -46,6 +47,7 @@ public class RecruiterService {
 			
 			String path1 = "json/recruiterStore/recruiterjobrequests"+recruiterId+".json";
 			ClassLoader classLoader = getClass().getClassLoader();
+			System.out.print("Path to set " +path1);
 	        URL resource = classLoader.getResource(path1);
 	        File file = new File(resource.getFile());
 			mapper.writeValue(file, jobRequests);
