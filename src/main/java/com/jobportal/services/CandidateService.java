@@ -54,7 +54,7 @@ public class CandidateService {
 			ObjectMapper mapper = new ObjectMapper();
 			
 			TypeReference<List<JobRequest>> typereference = new TypeReference<List<JobRequest>>() {};
-			String path = "/json/candidateStore/candidate-jobrequests-"+candidateId+".json";
+			String path = "/json/candidateStore/candidatejobrequests"+candidateId+".json";
 			InputStream inputStream = TypeReference.class.getResourceAsStream(path);
 			jobRequests = mapper.readValue(inputStream, typereference);
 			inputStream.close();
@@ -72,14 +72,15 @@ public class CandidateService {
 			ObjectMapper mapper = new ObjectMapper();
 			
 			TypeReference<List<JobRequest>> typereference = new TypeReference<List<JobRequest>>() {};
-			String path = "/json/candidateStore/candidate-jobrequests-"+candidateId+".json";
+			String path = "/json/candidateStore/candidatejobrequests"+candidateId+".json";
 			InputStream inputStream = TypeReference.class.getResourceAsStream(path);
 			jobRequests = mapper.readValue(inputStream, typereference);
 			jobRequests.add(jobRequest);
 			inputStream.close();
 			
+			String path1 = "json/candidateStore/candidatejobrequests"+candidateId+".json";
 			ClassLoader classLoader = getClass().getClassLoader();
-	        URL resource = classLoader.getResource(path);
+	        URL resource = classLoader.getResource(path1);
 	        File file = new File(resource.getFile());
 			mapper.writeValue(file, jobRequests);
 			
