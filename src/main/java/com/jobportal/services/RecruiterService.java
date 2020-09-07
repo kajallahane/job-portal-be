@@ -45,10 +45,8 @@ public class RecruiterService {
 			jobRequests.add(jobRequest);
 			inputStream.close();
 			
-			String path1 = "json/recruiterStore/recruiterjobrequests"+recruiterId+".json";
-			ClassLoader classLoader = getClass().getClassLoader();
-			System.out.print("Path to set " +path1);
-	        URL resource = classLoader.getResource(path1);
+			String path1 = "/json/recruiterStore/recruiterjobrequests"+recruiterId+".json";
+			URL resource = TypeReference.class.getResource(path1);
 	        File file = new File(resource.getFile());
 			mapper.writeValue(file, jobRequests);
 			
