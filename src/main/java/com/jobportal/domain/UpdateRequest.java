@@ -1,15 +1,10 @@
 package com.jobportal.domain;
 
 public class UpdateRequest {
-	private String jobId;
+	private String jobRequestId;
 	private String newStatus;
 	private String recruiterId;
-	public String getJobId() {
-		return jobId;
-	}
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
+	private String candidateId;
 	public String getNewStatus() {
 		return newStatus;
 	}
@@ -21,6 +16,18 @@ public class UpdateRequest {
 	}
 	public void setRecruiterId(String recruiterId) {
 		this.recruiterId = recruiterId;
+	}
+	public String getCandidateId() {
+		return candidateId;
+	}
+	public void setCandidateId(String candidateId) {
+		this.candidateId = candidateId;
+	}
+	public String getJobRequestId() {
+		return jobRequestId;
+	}
+	public void setJobRequestId(String jobRequestId) {
+		this.jobRequestId = jobRequestId;
 	}
 	
 	

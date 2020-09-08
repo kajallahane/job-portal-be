@@ -1,24 +1,27 @@
 package com.jobportal.domain;
 
+import java.util.ArrayList;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties
 public class JobRequest {
 	
 	String jobRequestId;
-	String[] jobRequestStatus;
+	ArrayList<String> jobRequestStatus;
 	Job jobDetails;
 	Candidate candidateDetails;
+	
 	public String getJobRequestId() {
 		return jobRequestId;
 	}
 	public void setJobRequestId(String jobRequestId) {
 		this.jobRequestId = jobRequestId;
 	}
-	public String[] getJobRequestStatus() {
+	public ArrayList<String> getJobRequestStatus() {
 		return jobRequestStatus;
 	}
-	public void setJobRequestStatus(String[] jobRequestStatus) {
+	public void setJobRequestStatus(ArrayList<String> jobRequestStatus) {
 		this.jobRequestStatus = jobRequestStatus;
 	}
 	public Job getJobDetails() {
