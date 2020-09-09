@@ -47,10 +47,10 @@ public class JobportalApplicationTests extends AbstractTest {
 	   jobStatus.add("Applied");
 	   jr.setJobRequestStatus(jobStatus);
 	   Job job = new Job();
-	   job.setCompanyId("123");
+	   job.setCompanyId("567");
 	   jr.setJobDetails(job);
 	   Candidate can = new Candidate();
-	   can.setCandidateId("1235");
+	   can.setCandidateId("123");
 	   jr.setCandidateDetails(can);
 	   
 	   String inputJson = super.mapToJson(jr);
